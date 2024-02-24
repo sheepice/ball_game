@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from game.model.volunteers.volunteers import StuVolunteer
 
 def PersonInfo(request):
@@ -10,7 +10,7 @@ def PersonInfo(request):
         NumId = post_data.get('confirm_info')
         print(type(NumId))
         is_submit = True
+        print(1)
         StuVolunteer.objects.filter(NumId=NumId).update(is_submit=is_submit)
-        NowStu = StuVolunteer.objects.filter(NumId=NumId).first()
-        return render('volunteeraction/PersonInfo.html', {'NowStu':NowStu})
+        return redirect('../InfoCheck')
     return render(request, 'volunteeraction/PersonInfo.html')

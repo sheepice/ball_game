@@ -96,7 +96,7 @@
                         </ul>
 
                     </div>
-                    <form id="myForm" method="post">
+                    <form id="myForm" method="post" action="/bjtuqingtuan/PersonInfo/">
                         {% csrf_token %}
                         <!-- 表单内容 -->
                         <input type="hidden" value="{{Student.NumId}}" name="confirm_info">
@@ -104,7 +104,7 @@
                             <button class="btn btn-primary container-fluid" onclick="showConfirmation(event)">提交</button>
                         {% endif %}
                     </form>
-                    {% if NowStu.is_submit == True %}
+                    {% if Student.is_submit == True %}
                         <button type="button" class="btn btn-secondary container-fluid">信息已确认完毕！！</button>
                     {% endif %}
 
