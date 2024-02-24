@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>信息核查</title>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        .card {
+            margin-top: 10px;
+        }
+
+        img {
+            align-items: center;
+        }
+
+        .text-color {
+            color: red;
+        }
+
+        .alert-danger {
+            margin-top: 30px;
+        }
+    </style>
+
+    <script>
+        function showConfirmation(event) {
+            // 阻止表单默认提交行为
+            event.preventDefault();
+            var x;
+            // 显示确认框
+            if (confirm("确认信息无误吗？只允许提交一次表单")) {
+                // 用户点击确认，发送 POST 请求
+                document.getElementById("myForm").submit();
+            } else {
+                // 用户点击取消，不发送请求
+                // 可以在这里执行其他操作，如重置表单等
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="card" style="width: 40rem;">
+                        <img src="https://app6466.acapp.acwing.com.cn/static/stu/{{Student.NumId}}.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ Student.StuName }}</h5>
+                            <p class="card-text text-center text-color">请核对好您的上面的证件照以及以下相关信息</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">学号:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuId }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">身份证号:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.NumId }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">年龄:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuAge }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">性别:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuGender }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">学院:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuCollege }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">户籍地:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">
+                                   {{ Student.StuAddress1 }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">现住址:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuAdress2 }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">上衣尺寸:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuShirt }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="card-text text-center fw-bold">裤子尺寸:</p>
+                                <p class="card-text text-center fs-4 text-decoration-underline">{{ Student.StuTrousers }}</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <form id="myForm" method="post">
+                        {% csrf_token %}
+                        <!-- 表单内容 -->
+                        <input type="hidden" value="{{Student.NumId}}" name="confirm_info">
+                        {% if Student.is_submit == False %}
+                            <button class="btn btn-primary container-fluid" onclick="showConfirmation(event)">提交</button>
+                        {% endif %}
+                    </form>
+                    {% if NowStu.is_submit == True %}
+                        <button type="button" class="btn btn-secondary container-fluid">信息已确认完毕！！</button>
+                    {% endif %}
+
+                    <div class="alert alert-danger" role="alert">
+                        如果信息有误，请及时联系管理员！！<br>
+                        微信号：vV2024version <br>
+                        qq号：1403860093
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

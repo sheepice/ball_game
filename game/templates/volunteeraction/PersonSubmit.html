@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>信息核查</title>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <style>
+        .card {
+            margin-top: 10px;
+        }
+
+        img {
+            align-items: center;
+        }
+
+        .text-color {
+            color: red;
+        }
+
+        .alert-danger {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form class="row g-3" enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <label for="StuName" class="form-label">姓名</label>
+                        <input value="{{request.POST.StuName}}" required name="StuName" type="text" class="form-control" id="StuName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="StuId" class="form-label">学号</label>
+                        <input value="{{request.POST.StuId}}" required name="StuId" type="text" class="form-control" id="StuId">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="NumId" class="form-label">身份证号</label>
+                        <input value="{{request.POST.NumId}}" required name="NumId" type="text" class="form-control" id="NumId">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="StuAge" class="form-label">年龄</label>
+                        <input value="{{request.POST.StuAge}}" required name="StuAge" type="text" class="form-control" id="StuAge">
+                    </div>
+                    <div class="col-6">
+                        <label for="StuCollege" class="form-label">学院</label>
+                        <input value="{{request.POST.StuCollege}}" required name="StuCollege" type="text" class="form-control" id="StuCollege"
+                            placeholder="计算机学院">
+                    </div>
+                    <div class="col-6">
+                        <label for="StuGender" class="form-label">性别</label>
+                        <input value="{{request.POST.StuGender}}" required name="StuGender" type="text" class="form-control" id="StuGender">
+                    </div>
+                    <div class="col-12">
+                        <label for="StuAdress1" class="form-label">户籍地</label>
+                        <input value="{{request.POST.StuAdress1}}" required name="StuAdress1" type="text" class="form-control" id="StuAddress1"
+                            placeholder="例如:广西省柳州市柳南区城站路百草园102#1-3-602">
+                    </div>
+                    <div class="col-12">
+                        <label for="StuAdress2" class="form-label">现住址</label>
+                        <input value="{{request.POST.StuAdress2}}" required name="StuAdress2" type="text" class="form-control" id="StuAddress2" placeholder="例如:北京市北京交通大学主校区嘉园B1131">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="StuShirt" class="form-label">上衣尺寸</label>
+                        <input value="{{request.POST.StuShirt}}" required name="StuShirt" type="text" class="form-control" id="StuShirt">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="StuTrousers" class="form-label">裤子尺寸</label>
+                        <input value="{{request.POST.StuTrousers}}" required name="StuTrousers" type="text" class="form-control" id="StuTrousers">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ImgFile" class="form-label">请上传你的证件照片</label>
+                        <input required name="ImgFile" class="form-control" type="file" id="ImgFile" accept=".jpg, .png">
+                        <h6 style="color:red;">{{error_message}}</h6>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary container-fluid">提交信息</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

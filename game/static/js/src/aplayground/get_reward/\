@@ -1,0 +1,34 @@
+class GET_REWARD extends WJY_GAME_OBJECT {
+    constructor(playground, x, y) {
+        super();
+        this.playground = playground;
+        this.x = x;
+        this.y = y;
+        this.ctx = this.playground.game_map.ctx;
+        this.text_content = ["+1生日快乐", "愿+1天天开心"];
+        this.cnt = 0;
+        this.spent_time = 0;
+        this.change_delta = 1.5;
+    }
+
+    update() {
+        let players = this.playground.players;
+        if(players.length === 1) {
+        this.spent_time += this.timedelta / 1000;
+        if(this.spent_time > this.change_delta) {
+            this.change_delta += 1.5;
+            this.cnt = (this.cnt + 1) % 2;
+        }
+        this.render();
+        }
+        if(this.spent_time > 6) {
+            window.alert("恭喜+1成功完成生日礼物挑战，你可以点击确定到主页！！")
+            this.playground.hide();
+        }
+    }
+
+    render() {
+        this.ctx.font = "200px Arial";
+        this.ctx.strokeText(this.text_content[this.cnt], this.x, this.y, 500);
+    }
+}

@@ -1,0 +1,230 @@
+.wjy_menu {
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/images/wjy.jpeg");
+    background-size: 100% 100%;
+    user-select: none;
+}
+
+.wjy-photo {
+    background-image: url("/static/images/wjy.jpeg");
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.wjy-menu-field {
+    width: 40vw;
+    position: relative;
+    top: 20vh;
+    left: 30vw;
+}
+.hh{
+
+}
+.wjy-menu-form {
+    color: white;
+    height: 10vh;
+    width: 25vw;
+    font-size: 4vh;
+    font-style: italic;
+    padding: 2vh;
+    text-align: center;
+    background-color: rgba(39,21,28, 0.6);
+    border-radius: 10px;
+    letter-spacing: 0.5vw;
+    cursor: pointer;
+
+}
+
+.wjy-menu-form:hover {
+    transform: scale(1.2);
+    transition: 100ms;
+}
+.wjy-playground {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+.wjy-return-form {
+    color: white;
+    height: 5vh;
+    width: 10vw;
+    font-size: 2vh;
+    padding: 1vh;
+    text-align: center;
+    background-color: red;
+    cursor: pointer;
+    letter-spacing: 0.3vw;
+}
+
+.wjy-return-field {
+    width: 8vw;
+    height: 7vh;
+    text-align:center;
+    line-height: 4vw;
+    background-color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 90vh;
+    left: 80vw;
+    cursor: pointer;
+}
+
+img {
+    position: relative;
+    top: 40px;
+    left: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+
+}
+
+p {
+    font-size:20px;
+    text-indent: 2em;
+    overflow: auto;
+
+
+}
+
+.rule {
+    position: relative;
+    top: 8%;
+    left: 15%;
+    background-color:pink;
+    width: 50vw;
+    height: 72vh;
+    overflow: auto;
+
+}
+
+.ac-game-settings{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://img2.baidu.com/it/u=3304620759,1323144983&fm=253&fmt=auto&app=138&f=JPEG?w=756&h=500");
+    background-size: 100% 100%;
+    user-select: none;
+}
+
+.ac-game-settings-login{
+    height: 41vh;
+    width: 20vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 7vh;
+}
+
+.ac-game-settings-register{
+    height: 49vh;
+    width: 20vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 7vh;
+}
+
+.ac-game-settings-title{
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+    height: 7vh;
+    padding-top: 1vh;
+}
+
+.ac-game-settings-username{
+    display: block;
+    height: 7vh;
+}
+
+.ac-game-settings-password{
+    display: block;
+    height: 7vh;
+}
+
+.ac-game-settings-submit{
+    display: block;
+    height: 7vh;
+}
+
+.ac-game-settings-item{
+    width: 100%;
+    height: 100%;
+}
+
+.ac-game-settings-item > input{
+    width: 90%;
+    line-height: 3vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vh;
+}
+
+.ac-game-settings-item > button{
+    color: white;
+    background-color: royalblue;
+    width: 90%;
+    line-height: 3vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.ac-game-settings-error-message{
+    color: red;
+    font-size: 1vh;
+    display: inline;
+    float: left;
+    padding-left: 1vw;
+}
+
+.ac-game-settings-option{
+    color: white;
+    font-size: 1.5vh;
+    display: inline;
+    float: right;
+    padding-right: 1.5vw;
+    cursor: pointer;
+}
+
+.ac-game-settings-acwing{
+    display: block;
+    height: 7vh;
+}
+
+.ac-game-settings-acwing > img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.ac-game-settings-acwing > div{
+    color: white;
+    font-size: 0.7vw;
+    text-align: center;
+    display: block;
+}
+
+

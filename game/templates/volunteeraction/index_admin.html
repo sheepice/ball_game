@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>管理员主页</title>
+		<script type="text/javascript" src="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js' %}"></script>
+		<link href="{% static 'plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+		<style>
+.card {
+	margin-top: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="./index_admin.html">管理员主页</a>
+			</li>
+		</ul>
+		<div class="container">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<button type="button" class="btn btn-info col-3 col-offset-3">添加活动+</button>
+					</div>
+					<div class="row">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">活动编号</th>
+									<th scope="col">活动名称</th>
+									<th scope="col">活动简介</th>
+									<th scope="col">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>2024半程马拉松志愿活动</td>
+									<td>用于信息核对</td>
+									<td>
+										<a href="">
+											<button type="button" class="btn btn-warning btn-sm">核对</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-success btn-sm">编辑</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-danger btn-sm">删除</button>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td><a href="">
+											<button type="button" class="btn btn-warning btn-sm">核对</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-success btn-sm">编辑</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-danger btn-sm">删除</button>
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td colspan="2">Larry the Bird</td>
+									<td><a href="">
+											<button type="button" class="btn btn-warning btn-sm">核对</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-success btn-sm">编辑</button>
+										</a>
+										<a href="">
+											<button type="button" class="btn btn-danger btn-sm">删除</button>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
